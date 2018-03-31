@@ -5,7 +5,7 @@ defmodule NovaNodeClient do
 
   use HTTPoison.Base
 
-  @endpoint Application.get_env(:nova_node_client, :endpoint)
+  @endpoint Application.get_env(:nova_node_client, :endpoint, "")
 
   def process_url(url) do
     @endpoint <> url

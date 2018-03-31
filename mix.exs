@@ -4,23 +4,27 @@ defmodule NovaNodeClient.MixProject do
   def project do
     [
       app: :nova_node_client,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.6",
-      start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
   end
 
   def application do
-    [
-      extra_applications: [:logger]
-    ]
+    [applications: [:httpoison]]
   end
 
   defp deps do
     [
       {:httpoison, "~> 1.0"},
       {:poison, "~> 3.1"}
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Insprac"],
+      links: %{"Github" => "https://github.com/insprac/nova_node_client.git"}
     ]
   end
 end
